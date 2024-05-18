@@ -17,6 +17,8 @@ public class GridBehavior : MonoBehaviour
     public int movY = 7;
     public List<GameObject> path = new List<GameObject>();
     public GameObject Personaje1;
+    public GameObject Personaje2;
+    public int Personaje = 0;
     // Start is called before the first frame update
     void Awake()
     {
@@ -30,6 +32,7 @@ public class GridBehavior : MonoBehaviour
             Vector3 startPosition = startCell.transform.position;
             startPosition.y += 1.0f;
             Personaje1.transform.position = startPosition;
+            Personaje2.transform.position = startPosition;
         }
         else
         {
@@ -189,7 +192,14 @@ public class GridBehavior : MonoBehaviour
         x = tempObj.GetComponent<GridStat>().x;
         y = tempObj.GetComponent<GridStat>().y;
         tempList.Clear();
-        Personaje1.GetComponent<MovimientoPersonaje>().SetTargetPosition(tempObj.transform.position);
+        if (Personaje == 1)
+        {
+            Personaje1.GetComponent<MovimientoPersonaje>().SetTargetPosition(tempObj.transform.position);
+        }
+        if (Personaje == 2)
+        {
+            Personaje2.GetComponent<MovimientoPersonaje>().SetTargetPosition(tempObj.transform.position);
+        }
     }
 
     GameObject EncontrarMasCercano(Transform targetlocation, List<GameObject> list)
