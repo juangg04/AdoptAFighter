@@ -36,7 +36,7 @@ public class CharacterMov : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            UpdateMouseLook();
+            //UpdateMouseLook();
             UpdateMovement();
 
     }

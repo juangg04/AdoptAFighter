@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HpAnimal : MonoBehaviour
+public class AnimalStats : MonoBehaviour
 {
 
     [SerializeField] private FloatValueSO currentHealth;
+
+    [SerializeField] private FloatValueSO defense;
 
     // Start is called before the first frame update
     void Start()
@@ -16,13 +18,13 @@ public class HpAnimal : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( Input.GetKeyDown(KeyCode.Z)){
-            currentHealth.Value -=  0.25f;
-        }
-
-        if (currentHealth.Value <= 0){
-
-            currentHealth.Value = 1;
+        if(Input.GetKeyDown(KeyCode.Z)){
+            damaged(0.2f);
         }
     }
+
+    public void damaged(float damage){
+        currentHealth.Value -= damage * defense.Value;
+    }
+
 }
