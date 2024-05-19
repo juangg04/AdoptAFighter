@@ -6,29 +6,27 @@ public class MovimientoPersonaje : MonoBehaviour
 {
     public float speed = 5.0f;
     private Vector3 targetPosition;
-
-    void Start()
-    {
-        targetPosition = transform.position;
-    }
+    private bool isMoving = false;
 
     void Update()
     {
-        if (Vector3.Distance(transform.position, targetPosition) > 0.1f)
+        if (isMoving)
         {
-            MoveTowardsTarget();
+            float step = speed * Time.deltaTime;
+            Vector3 newPosition = Vector3.MoveTowards(transform.position, targetPosition, step);
+            newPosition.y = transform.position.y;
+            transform.position = newPosition;
+
+            if (Vector3.Distance(transform.position, targetPosition) < 0.001f)
+            {
+                isMoving = false;
+            }
         }
     }
 
-    public void SetTargetPosition(Vector3 targetPos)
+    public void SetTargetPosition(Vector3 position)
     {
-        targetPosition = targetPos;
-    }
-
-    void MoveTowardsTarget()
-    {
-        Vector3 newPosition = new Vector3(targetPosition.x, transform.position.y, targetPosition.z);
-
-        transform.position = Vector3.MoveTowards(transform.position, newPosition, speed * Time.deltaTime);
+        targetPosition = new Vector3(position.x, transform.position.y, position.z);
+        isMoving = true;
     }
 }

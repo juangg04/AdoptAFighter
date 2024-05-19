@@ -156,6 +156,8 @@ public class GridBehavior : MonoBehaviour
         int y = movY;
         List<GameObject> tempList = new List<GameObject>();
         path.Clear();
+
+        // Verifica si la celda objetivo es alcanzable
         if (gridArray[movX, movY] && gridArray[movX, movY].GetComponent<GridStat>().visited > 0)
         {
             path.Add(gridArray[x, y]);
@@ -163,44 +165,57 @@ public class GridBehavior : MonoBehaviour
         }
         else
         {
-            print("No se puede alcanzar esa localizacion");
+            print("No se puede alcanzar esa localización");
+            return; // Salir de la función si no se puede alcanzar
         }
-        for (int i = paso; paso > -1; paso--)
+
+        // Recorre desde el objetivo hasta el inicio
+        while (paso >= 0)
         {
             if (Comprobardirecion(x, y, paso, 1))
             {
                 tempList.Add(gridArray[x, y + 1]);
             }
-
             if (Comprobardirecion(x, y, paso, 2))
             {
                 tempList.Add(gridArray[x + 1, y]);
             }
-
             if (Comprobardirecion(x, y, paso, 3))
             {
                 tempList.Add(gridArray[x, y - 1]);
             }
-
             if (Comprobardirecion(x, y, paso, 4))
             {
                 tempList.Add(gridArray[x - 1, y]);
             }
+
+            if (tempList.Count > 0)
+            {
+                GameObject tempObj = EncontrarMasCercano(gridArray[x, y].transform, tempList);
+                path.Add(tempObj);
+                x = tempObj.GetComponent<GridStat>().x;
+                y = tempObj.GetComponent<GridStat>().y;
+                tempList.Clear();
+                paso--;
+            }
+            else
+            {
+                print("Ruta no encontrada correctamente");
+                break;
+            }
         }
-        GameObject tempObj = EncontrarMasCercano(gridArray[movX, movY].transform, tempList);
-        path.Add(tempObj);
-        x = tempObj.GetComponent<GridStat>().x;
-        y = tempObj.GetComponent<GridStat>().y;
-        tempList.Clear();
+
+        // Mueve al personaje seleccionado a la celda objetivo
         if (Personaje == 1)
         {
-            Personaje1.GetComponent<MovimientoPersonaje>().SetTargetPosition(tempObj.transform.position);
+            Personaje1.GetComponent<MovimientoPersonaje>().SetTargetPosition(gridArray[movX, movY].transform.position);
         }
         if (Personaje == 2)
         {
-            Personaje2.GetComponent<MovimientoPersonaje>().SetTargetPosition(tempObj.transform.position);
+            Personaje2.GetComponent<MovimientoPersonaje>().SetTargetPosition(gridArray[movX, movY].transform.position);
         }
     }
+
 
     GameObject EncontrarMasCercano(Transform targetlocation, List<GameObject> list)
     {
