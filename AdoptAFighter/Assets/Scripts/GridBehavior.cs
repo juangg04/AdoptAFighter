@@ -18,6 +18,8 @@ public class GridBehavior : MonoBehaviour
     public List<GameObject> path = new List<GameObject>();
     public GameObject Personaje1;
     public GameObject Personaje2;
+    public GameObject Personaje3;
+    public GameObject Personaje4;
     public int Personaje = 0;
     // Start is called before the first frame update
     void Awake()
@@ -29,10 +31,30 @@ public class GridBehavior : MonoBehaviour
 
         if (startCell != null)
         {
-            Vector3 startPosition = startCell.transform.position;
-            startPosition.y += 1.0f;
-            Personaje1.transform.position = startPosition;
-            Personaje2.transform.position = startPosition;
+            Vector3 startPosition1 = startCell.transform.position;
+            startPosition1.x += 9.0f;
+            startPosition1.y += 1.0f;
+            startPosition1.z += 4.0f;
+            Personaje1.transform.position = startPosition1;
+
+            Vector3 startPosition2 = startCell.transform.position;
+            startPosition2.x += 14.0f;
+            startPosition2.y += 1.0f;
+            startPosition2.z += 4.0f;
+            Personaje2.transform.position = startPosition2;
+
+            Vector3 startPosition3 = startCell.transform.position;
+            startPosition3.x += 9.0f;
+            startPosition3.y += 1.0f;
+            startPosition3.z += 19.0f;
+            Personaje3.transform.position = startPosition3;
+
+            Vector3 startPosition4 = startCell.transform.position;
+            startPosition4.x += 14.0f;
+            startPosition4.y += 1.0f;
+            startPosition4.z += 19.0f;
+            Personaje4.transform.position = startPosition4;
+
         }
         else
         {
@@ -165,8 +187,8 @@ public class GridBehavior : MonoBehaviour
         }
         else
         {
-            print("No se puede alcanzar esa localización");
-            return; // Salir de la función si no se puede alcanzar
+            print("No se puede alcanzar esa localizaciï¿½n");
+            return; // Salir de la funciï¿½n si no se puede alcanzar
         }
 
         // Recorre desde el objetivo hasta el inicio

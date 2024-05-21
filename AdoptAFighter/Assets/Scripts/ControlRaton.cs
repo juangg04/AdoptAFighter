@@ -9,11 +9,15 @@ public class ControlRaton : MonoBehaviour
     private RaycastHit hit;
     public GridBehavior gridBehavior;
     public int personaje;
+
+
+
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
-            rayo = Camera.main.ScreenPointToRay(Input.mousePosition);
+            rayo =  Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(rayo, out hit, 100, capaTransitable))
             {
                 GridStat gridStat = hit.collider.GetComponent<GridStat>();

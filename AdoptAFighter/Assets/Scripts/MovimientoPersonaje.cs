@@ -8,6 +8,7 @@ public class MovimientoPersonaje : MonoBehaviour
     private Vector3 targetPosition;
     private bool isMoving = false;
 
+
     void Update()
     {
         if (isMoving)

@@ -16,7 +16,7 @@ public class TurnManager : MonoBehaviour
 
     public void ButtonPressed(){
         turn.Value += 1f;
-        if(turn.Value > 3f){
+        if(turn.Value > 4f){
             turn.Value = 0f;
         }
     }
