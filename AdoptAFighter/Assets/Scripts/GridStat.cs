@@ -8,6 +8,8 @@ public class GridStat : MonoBehaviour
     public int visited = -1;
     public int x = 0;
     public int y = 0;
+    public GameObject personaje;
+    public bool Ocupada = false;
     void Start()
     {
         
@@ -17,5 +19,17 @@ public class GridStat : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        personaje = other.gameObject;
+        Ocupada = true;
+    }
+
+    private void OnTriggerExit(Collider personaje)
+    {
+        personaje = null;
+        Ocupada = false;
     }
 }

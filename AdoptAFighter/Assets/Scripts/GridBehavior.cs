@@ -171,6 +171,7 @@ public class GridBehavior : MonoBehaviour
         }
     }
 
+
     void SetPath()
     {
         int paso = 0;
@@ -180,7 +181,7 @@ public class GridBehavior : MonoBehaviour
         path.Clear();
 
         // Verifica si la celda objetivo es alcanzable
-        if (gridArray[movX, movY] && gridArray[movX, movY].GetComponent<GridStat>().visited > 0)
+        if (gridArray[movX, movY] && gridArray[movX, movY].GetComponent<GridStat>().visited > 0 && gridArray[movX, movY].GetComponent<GridStat>().Ocupada == false)
         {
             path.Add(gridArray[x, y]);
             paso = gridArray[x, y].GetComponent<GridStat>().visited - 1;
@@ -235,6 +236,14 @@ public class GridBehavior : MonoBehaviour
         if (Personaje == 2)
         {
             Personaje2.GetComponent<MovimientoPersonaje>().SetTargetPosition(gridArray[movX, movY].transform.position);
+        }
+        if (Personaje == 3)
+        {
+            Personaje3.GetComponent<MovimientoPersonaje>().SetTargetPosition(gridArray[movX, movY].transform.position);
+        }
+        if (Personaje == 4)
+        {
+            Personaje4.GetComponent<MovimientoPersonaje>().SetTargetPosition(gridArray[movX, movY].transform.position);
         }
     }
 
