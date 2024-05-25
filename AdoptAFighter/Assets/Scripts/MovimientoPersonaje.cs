@@ -29,4 +29,23 @@ public class MovimientoPersonaje : MonoBehaviour
         targetPosition = new Vector3(position.x, transform.position.y, position.z);
         isMoving = true;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        GridStat gridStat = other.GetComponent<GridStat>();
+        if (gridStat != null)
+        {
+            gridStat.movimientoalcanzable = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        GridStat gridStat = other.GetComponent<GridStat>();
+        if (gridStat != null)
+        {
+            gridStat.movimientoalcanzable = false;
+        }
+    }
+
 }

@@ -19,7 +19,8 @@ public class GridBehavior : MonoBehaviour
     public GameObject Personaje1;
     public GameObject Personaje2;
     public int Personaje = 0;
-    // Start is called before the first frame update
+    public ControlRaton control;
+
     void Awake()
     {
         gridArray = new GameObject[columnas, filas];
@@ -40,7 +41,6 @@ public class GridBehavior : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (encontrarDistancia)
@@ -69,12 +69,12 @@ public class GridBehavior : MonoBehaviour
     void SetUp()
     {
         foreach (GameObject obj in gridArray)
-
         {
             obj.GetComponent<GridStat>().visited = -1;
         }
         gridArray[startX, startY].GetComponent<GridStat>().visited = 0;
     }
+
     bool Comprobardirecion(int x, int y, int paso, int direccion)
     {
         switch (direccion)
@@ -102,12 +102,73 @@ public class GridBehavior : MonoBehaviour
         }
         return false;
     }
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     void Visitado(int x, int y, int paso)
     {
         if (gridArray[x, y])
             gridArray[x, y].GetComponent<GridStat>().visited = paso;
     }
 
+<<<<<<< Updated upstream
+=======
+    bool Ocupado(int x, int y)
+    {
+        if (gridArray[x, y])
+        {
+            return gridArray[x, y].GetComponent<GridStat>().Ocupada;
+        }
+        return false;
+    }
+
+    public void TestOcupadoAdyacente(int x, int y, bool ocupado, GameObject enemigo)
+    {
+        if (Ocupado(x - 1, y + 1))
+        {
+            ocupado = true;
+            enemigo = gridArray[x - 1, y + 1].GetComponent<GridStat>().personaje;
+        }
+        if (Ocupado(x, y + 1))
+        {
+            ocupado = true;
+            enemigo = gridArray[x, y + 1].GetComponent<GridStat>().personaje;
+        }
+        if (Ocupado(x + 1, y + 1))
+        {
+            ocupado = true;
+            enemigo = gridArray[x + 1, y + 1].GetComponent<GridStat>().personaje;
+        }
+        if (Ocupado(x + 1, y))
+        {
+            ocupado = true;
+            enemigo = gridArray[x + 1, y].GetComponent<GridStat>().personaje;
+        }
+        if (Ocupado(x + 1, y - 1))
+        {
+            ocupado = true;
+            enemigo = gridArray[x + 1, y - 1].GetComponent<GridStat>().personaje;
+        }
+        if (Ocupado(x, y - 1))
+        {
+            ocupado = true;
+            enemigo = gridArray[x, y - 1].GetComponent<GridStat>().personaje;
+        }
+        if (Ocupado(x - 1, y - 1))
+        {
+            ocupado = true;
+            enemigo = gridArray[x - 1, y - 1].GetComponent<GridStat>().personaje;
+        }
+        if (Ocupado(x - 1, y))
+        {
+            ocupado = true;
+            enemigo = gridArray[x - 1, y].GetComponent<GridStat>().personaje;
+        }
+        ocupado = false;
+        enemigo = null;
+    }
+>>>>>>> Stashed changes
 
     void Distancia()
     {
@@ -124,7 +185,6 @@ public class GridBehavior : MonoBehaviour
             }
         }
     }
-
 
     void Test4Direcciones(int x, int y, int paso)
     {
@@ -158,15 +218,26 @@ public class GridBehavior : MonoBehaviour
         path.Clear();
 
         // Verifica si la celda objetivo es alcanzable
+<<<<<<< Updated upstream
         if (gridArray[movX, movY] && gridArray[movX, movY].GetComponent<GridStat>().visited > 0)
+=======
+        GridStat targetCellStat = gridArray[movX, movY].GetComponent<GridStat>();
+        if (gridArray[movX, movY] && targetCellStat.visited > 0 && !targetCellStat.Ocupada && targetCellStat.movimientoalcanzable)
+>>>>>>> Stashed changes
         {
             path.Add(gridArray[x, y]);
-            paso = gridArray[x, y].GetComponent<GridStat>().visited - 1;
+            paso = targetCellStat.visited - 1;
         }
         else
         {
+<<<<<<< Updated upstream
             print("No se puede alcanzar esa localización");
             return; // Salir de la función si no se puede alcanzar
+=======
+            control.movible = true;
+            Debug.Log("No se puede alcanzar esa localizaciÃ³n. Estado - Visited: " + targetCellStat.visited + ", Ocupada: " + targetCellStat.Ocupada + ", Alcanzable: " + targetCellStat.movimientoalcanzable);
+            return; // Salir de la funciÃ³n si no se puede alcanzar
+>>>>>>> Stashed changes
         }
 
         // Recorre desde el objetivo hasta el inicio
@@ -200,22 +271,40 @@ public class GridBehavior : MonoBehaviour
             }
             else
             {
-                print("Ruta no encontrada correctamente");
+                Debug.Log("Ruta no encontrada correctamente");
                 break;
             }
         }
 
         // Mueve al personaje seleccionado a la celda objetivo
-        if (Personaje == 1)
+        Vector3 targetPosition = gridArray[movX, movY].transform.position;
+        switch (Personaje)
         {
+<<<<<<< Updated upstream
             Personaje1.GetComponent<MovimientoPersonaje>().SetTargetPosition(gridArray[movX, movY].transform.position);
         }
         if (Personaje == 2)
         {
             Personaje2.GetComponent<MovimientoPersonaje>().SetTargetPosition(gridArray[movX, movY].transform.position);
+=======
+            case 1:
+                Personaje1.GetComponent<MovimientoPersonaje>().SetTargetPosition(targetPosition);
+                break;
+            case 2:
+                Personaje2.GetComponent<MovimientoPersonaje>().SetTargetPosition(targetPosition);
+                break;
+            case 3:
+                Personaje3.GetComponent<MovimientoPersonaje>().SetTargetPosition(targetPosition);
+                break;
+            case 4:
+                Personaje4.GetComponent<MovimientoPersonaje>().SetTargetPosition(targetPosition);
+                break;
+            default:
+                Debug.LogError("Personaje no vÃ¡lido seleccionado");
+                break;
+>>>>>>> Stashed changes
         }
     }
-
 
     GameObject EncontrarMasCercano(Transform targetlocation, List<GameObject> list)
     {
@@ -223,9 +312,10 @@ public class GridBehavior : MonoBehaviour
         int Numero = 0;
         for (int i = 0; i < list.Count; i++)
         {
-            if (Vector3.Distance(targetlocation.position, list[i].transform.position) < distanciaActual)
+            float distancia = Vector3.Distance(targetlocation.position, list[i].transform.position);
+            if (distancia < distanciaActual)
             {
-                distanciaActual = Vector3.Distance(targetlocation.position, list[i].transform.position);
+                distanciaActual = distancia;
                 Numero = i;
             }
         }

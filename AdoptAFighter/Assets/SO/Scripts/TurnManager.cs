@@ -14,10 +14,24 @@ public class TurnManager : MonoBehaviour
     }
 
 
-    public void ButtonPressed(){
+    public void ButtonPressed()
+    {
         turn.Value += 1f;
+<<<<<<< Updated upstream
         if(turn.Value > 3f){
+=======
+        if (turn.Value > 4f)
+        {
+>>>>>>> Stashed changes
             turn.Value = 0f;
+        }
+        if (turn.Value > 0f)
+        {
+            control.movible = true;
+        }
+        else
+        {
+            control.movible = false;
         }
     }
 }
