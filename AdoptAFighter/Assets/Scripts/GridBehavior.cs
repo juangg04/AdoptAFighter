@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GridBehavior : MonoBehaviour
@@ -124,12 +125,59 @@ public class GridBehavior : MonoBehaviour
         }
         return false;
     }
+    //Comprobacion Visitado
     void Visitado(int x, int y, int paso)
     {
         if (gridArray[x, y])
             gridArray[x, y].GetComponent<GridStat>().visited = paso;
     }
 
+    //Comprobacion Ocupado
+    bool Ocupado(int x, int y)
+    {
+        if (gridArray[x, y]){
+            return gridArray[x, y].GetComponent<GridStat>().Ocupada;
+        }
+        return false;
+    }
+
+        public void TestOcupadoAdyacente(int x, int y,bool ocupado,GameObject enemigo)
+    {
+        if (Ocupado(x-1, y+1)){
+            ocupado = true;
+            enemigo = gridArray[x-1,y+1].GetComponent<GridStat>().personaje;;
+        }
+        if (Ocupado(x, y+1)){
+            ocupado = true;
+            enemigo = gridArray[x,y+1].GetComponent<GridStat>().personaje;;
+        }
+        if (Ocupado(x+1, y+1)){
+            ocupado = true;
+            enemigo = gridArray[x+1,y+1].GetComponent<GridStat>().personaje;;
+        }
+        if (Ocupado(x+1, y)){
+            ocupado = true;
+            enemigo = gridArray[x+1,y].GetComponent<GridStat>().personaje;;
+        }
+        if (Ocupado(x+1, y-1)){
+            ocupado = true;
+            enemigo = gridArray[x + 1,y-1].GetComponent<GridStat>().personaje;;
+        }
+        if (Ocupado(x, y-1)){
+            ocupado = true;
+            enemigo = gridArray[x,y-1].GetComponent<GridStat>().personaje;;
+        }
+        if (Ocupado(x-1, y-1)){
+            ocupado = true;
+            enemigo = gridArray[x-1,y-1].GetComponent<GridStat>().personaje;;
+        }
+        if (Ocupado(x-1, y)){
+            ocupado = true;
+            enemigo = gridArray[x - 1,y].GetComponent<GridStat>().personaje;
+        }
+        ocupado = false;
+        enemigo = null;
+    }
 
     void Distancia()
     {
@@ -141,6 +189,7 @@ public class GridBehavior : MonoBehaviour
         {
             foreach (GameObject obj in gridArray)
             {
+                
                 if (obj && obj.GetComponent<GridStat>().visited == paso - 1)
                     Test4Direcciones(obj.GetComponent<GridStat>().x, obj.GetComponent<GridStat>().y, paso);
             }
