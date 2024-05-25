@@ -9,11 +9,6 @@ public class ControlRaton : MonoBehaviour
     private RaycastHit hit;
     public GridBehavior gridBehavior;
     public int personaje;
-<<<<<<< Updated upstream
-    void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-=======
     public bool movible = true;
 
 
@@ -21,7 +16,6 @@ public class ControlRaton : MonoBehaviour
     {
 
         if (Input.GetMouseButtonDown(0) && movible)
->>>>>>> Stashed changes
         {
             rayo = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(rayo, out hit, 100, capaTransitable))

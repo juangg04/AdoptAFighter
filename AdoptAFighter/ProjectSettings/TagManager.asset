@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Team1
+  - Team2
+  - CamManger
+  - NotMainCamera
+  - Animal1
+  - Animal2
+  - Animal3
+  - Animal4
   layers:
   - Default
   - TransparentFX

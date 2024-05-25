@@ -5,26 +5,24 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField] private Camera mainCamera;
-
+    [SerializeField] private Camera fullCam;
     [SerializeField] private Camera camera1;
-
     [SerializeField] private Camera camera2;
-
     [SerializeField] private Camera camera3;
+    [SerializeField] private Camera camera4;
 
     [SerializeField] private FloatValueSO turnNumber;
-
 
 
 
     // Update is called once per frame
     void Update()
     {
-        disableCamara(mainCamera);
+        disableCamara(fullCam);
         disableCamara(camera1);
         disableCamara(camera2);
         disableCamara(camera3);
+        disableCamara(camera4);
 
        switch (turnNumber.Value){
         case 1:
@@ -36,8 +34,11 @@ public class CameraManager : MonoBehaviour
         case 3:
             enableCamara(camera3);
             break;
+        case 4:
+            enableCamara(camera4);
+            break;
         default:
-            enableCamara(mainCamera);
+            enableCamara(fullCam);
             break;
        }
     }
@@ -45,10 +46,12 @@ public class CameraManager : MonoBehaviour
     private void enableCamara(Camera cam){
         cam.enabled = true;
         cam.GetComponent<AudioListener>().enabled = true;
+        cam.tag = "MainCamera";
     }
 
     private void disableCamara(Camera cam){
         cam.enabled = false;
         cam.GetComponent<AudioListener>().enabled = false;
+        cam.tag = "NotMainCamera";
     }
 }
