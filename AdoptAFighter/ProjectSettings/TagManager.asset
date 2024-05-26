@@ -8,10 +8,7 @@ TagManager:
   - Team2
   - CamManger
   - NotMainCamera
-  - Animal1
-  - Animal2
-  - Animal3
-  - Animal4
+  - Animal
   layers:
   - Default
   - TransparentFX

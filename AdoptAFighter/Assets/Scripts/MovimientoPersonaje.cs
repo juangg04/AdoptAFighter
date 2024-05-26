@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class MovimientoPersonaje : MonoBehaviour
 {
     public float speed = 5.0f;

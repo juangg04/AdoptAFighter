@@ -103,6 +103,7 @@ MonoBehaviour:
   y: 0
   personaje: {fileID: 0}
   Ocupada: 0
+  movimientoalcanzable: 0
 --- !u!65 &7090257264911304076
 BoxCollider:
   m_ObjectHideFlags: 0

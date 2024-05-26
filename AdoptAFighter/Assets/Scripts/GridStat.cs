@@ -9,11 +9,11 @@ public class GridStat : MonoBehaviour
     public int y = 0;
     public GameObject personaje;
     public bool Ocupada = false;
-    public bool movimientoalcanzable = true; // Asegúrate de que esta propiedad se inicializa correctamente.
+    public bool movimientoalcanzable = false; // Asegï¿½rate de que esta propiedad se inicializa correctamente.
 
     void Start()
     {
-        // Inicializa cualquier cosa adicional aquí si es necesario.
+        // Inicializa cualquier cosa adicional aquï¿½ si es necesario.
     }
 
     void OnTriggerEnter(Collider other)

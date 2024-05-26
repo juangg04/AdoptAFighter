@@ -18,6 +18,7 @@ public class CameraManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         disableCamara(fullCam);
         disableCamara(camera1);
         disableCamara(camera2);
@@ -26,6 +27,7 @@ public class CameraManager : MonoBehaviour
 
        switch (turnNumber.Value){
         case 1:
+            //Debug.Log("si");
             enableCamara(camera1);
             break;
         case 2:
@@ -41,6 +43,7 @@ public class CameraManager : MonoBehaviour
             enableCamara(fullCam);
             break;
        }
+
     }
 
     private void enableCamara(Camera cam){
