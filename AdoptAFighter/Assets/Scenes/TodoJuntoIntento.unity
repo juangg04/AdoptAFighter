@@ -2026,6 +2026,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   turn: {fileID: 11400000, guid: b238ff612e557a84f96f87f1b6440e74, type: 2}
   control: {fileID: 177383606}
+  collider1: {fileID: 1545301151}
+  collider2: {fileID: 813437083}
+  collider3: {fileID: 992078803}
+  collider4: {fileID: 682755184}
 --- !u!114 &1372977022
 MonoBehaviour:
   m_ObjectHideFlags: 0
