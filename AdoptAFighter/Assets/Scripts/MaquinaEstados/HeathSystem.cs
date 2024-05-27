@@ -3,22 +3,26 @@ using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
 {
-    public int maxHealth = 100;
+    [SerializeField] private FloatSO animalDef;
+
+    [SerializeField] private FloatSO animalHealth;
+
+    public float maxHealth = 100f;
     public int currentHealth;
     public Image health;
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        animalHealth.Value = maxHealth;
         UpdateHearts();
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        if (currentHealth <= 0)
+        animalHealth.Value -= (damage * animalDef.Value);
+        if (animalHealth.Value <= 0f)
         {
-            currentHealth = 0;
+            animalHealth.Value = 0;
             gameObject.GetComponent<MaquinaDeEstados>().ActivarEstado(gameObject.GetComponent<MaquinaDeEstados>().Muerto);
         }
         UpdateHearts();
@@ -26,17 +30,17 @@ public class HealthSystem : MonoBehaviour
 
     public void Heal(int healAmount)
     {
-        currentHealth += healAmount;
-        if (currentHealth > maxHealth)
+        animalHealth.Value += healAmount;
+        if (animalHealth.Value > maxHealth)
         {
-            currentHealth = maxHealth;
+            animalHealth.Value = maxHealth;
         }
         UpdateHearts();
     }
 
     private void UpdateHearts()
     {
-        float fillPercentage = (float)currentHealth / maxHealth;
+        float fillPercentage = (float)animalHealth.Value / maxHealth;
             health.fillAmount = fillPercentage;
 
     }

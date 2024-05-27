@@ -7,6 +7,8 @@ public class Character : MonoBehaviour
     #region Datos
 
     [SerializeField] private Button atackButton;
+
+    public GameObject tagTeam;
     public GameObject cercano;
     public bool Moving { get; private set; } = false;
     public bool isMoving { get;  set; } = false;
@@ -110,15 +112,20 @@ public class Character : MonoBehaviour
     {
         if (atackButton == null)
         {
-            Debug.LogError("attackButton no está asignado.");
+            Debug.LogError("attackButton no estï¿½ asignado.");
             return; // Salir temprano si attackButton es null
         }
 
         if (other.CompareTag("Player"))
         {
-            cercano = other.gameObject;
-            atackButton.gameObject.SetActive(true);
-            Debug.Log("ENTRO EN COLISION0");
+            if (other.gameObject.transform.GetChild(0).gameObject.tag == tagTeam.tag){
+                Debug.Log("Mismo Equipo");
+            }else{
+                cercano = other.gameObject;
+                atackButton.gameObject.SetActive(true);
+                Debug.Log("ENTRO EN COLISION0");
+            }
+
         }
     }
 }

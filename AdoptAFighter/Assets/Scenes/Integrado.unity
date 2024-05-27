@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4391,6 +4391,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 138837399}
   m_Mesh: {fileID: -5495902117074765545, guid: 571d29fe66cd6bb40a9987d6f1d1a594, type: 3}
+--- !u!1 &139623006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1849863207}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &140750162
 GameObject:
   m_ObjectHideFlags: 0
@@ -7107,10 +7113,20 @@ PrefabInstance:
       propertyPath: MeshRendererIndicador
       value: 
       objectReference: {fileID: 346239636}
+    - target: {fileID: 220303031210332880, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 220303031585184930, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: m_Name
-      value: Player (3)
+      value: Animal2
+      objectReference: {fileID: 0}
+    - target: {fileID: 220303031585184930, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 220303031585184934, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
@@ -7174,14 +7190,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Team1
       objectReference: {fileID: 0}
     - target: {fileID: 220303032207745230, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e81b8f353654b964ba46e23c797170ed, type: 2}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: tagTeam
+      value: 
+      objectReference: {fileID: 582186318}
     - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: movedata
@@ -7208,6 +7234,18 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 2027472229}
+    - target: {fileID: 2390433876128310081, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: animalDef
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fe94e01ad2d8084c81c2c8a3f925657,
+        type: 2}
+    - target: {fileID: 2390433876128310081, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: animalHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: 9457c5a6d7daad84f9f5c82998bc5d93,
+        type: 2}
     - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: atackButton
@@ -18780,6 +18818,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 579947109}
   m_Mesh: {fileID: 2534964839176971238, guid: 948a519f03ae84f45b675ac716135b39, type: 3}
+--- !u!1 &582186318 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
+    type: 3}
+  m_PrefabInstance: {fileID: 239060858}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &592033801
 GameObject:
   m_ObjectHideFlags: 0
@@ -29170,10 +29214,20 @@ PrefabInstance:
       propertyPath: MeshRendererIndicador
       value: 
       objectReference: {fileID: 1700565485}
+    - target: {fileID: 220303031210332880, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 220303031585184930, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: m_Name
-      value: Player (1)
+      value: Animal3
+      objectReference: {fileID: 0}
+    - target: {fileID: 220303031585184930, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 220303031585184934, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
@@ -29237,8 +29291,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Team2
       objectReference: {fileID: 0}
     - target: {fileID: 220303032207745228, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
@@ -29260,6 +29319,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 3026df6fc5032174fb2381ad3993b919, type: 2}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: tagTeam
+      value: 
+      objectReference: {fileID: 947584537}
     - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: movedata
@@ -29286,6 +29350,18 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 25692431}
+    - target: {fileID: 2390433876128310081, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: animalDef
+      value: 
+      objectReference: {fileID: 11400000, guid: 8fe94e01ad2d8084c81c2c8a3f925657,
+        type: 2}
+    - target: {fileID: 2390433876128310081, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: animalHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: be5e81be03fe7a149948db0c98aad429,
+        type: 2}
     - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: atackButton
@@ -31623,10 +31699,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 220303032095919305}
-  - {fileID: 850753297}
   - {fileID: 1849863208}
   - {fileID: 239060859}
+  - {fileID: 850753297}
+  - {fileID: 220303032095919305}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &937582541
@@ -31925,6 +32001,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 943225767}
   m_Mesh: {fileID: 2534964839176971238, guid: 948a519f03ae84f45b675ac716135b39, type: 3}
+--- !u!1 &947584537 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
+    type: 3}
+  m_PrefabInstance: {fileID: 850753296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &959166007
 GameObject:
   m_ObjectHideFlags: 0
@@ -53049,6 +53131,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1524661424}
   m_Mesh: {fileID: -5495902117074765545, guid: 571d29fe66cd6bb40a9987d6f1d1a594, type: 3}
+--- !u!1 &1526507709 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
+    type: 3}
+  m_PrefabInstance: {fileID: 220303032095919304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1527290483
 GameObject:
   m_ObjectHideFlags: 0
@@ -58561,6 +58649,143 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729360744}
   m_Mesh: {fileID: 2534964839176971238, guid: 948a519f03ae84f45b675ac716135b39, type: 3}
+--- !u!1 &1734046900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1734046901}
+  - component: {fileID: 1734046903}
+  - component: {fileID: 1734046902}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1734046901
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734046900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 214726947}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 147}
+  m_SizeDelta: {x: 655.9, y: 163.9}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1734046902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734046900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'SE ACABO
+
+
+    Uno de los equipos ha sido eleminado'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 40
+  m_fontSizeBase: 40
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 0
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1734046903
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1734046900}
+  m_CullTransparentMesh: 1
 --- !u!1 &1734601681
 GameObject:
   m_ObjectHideFlags: 0
@@ -61503,6 +61728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19290c44b00e0dd48a5ef49b3ab31ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  endText: {fileID: 1734046900}
   players:
   - {fileID: 625867512}
   - {fileID: 1016238392}
@@ -63997,10 +64223,20 @@ PrefabInstance:
       propertyPath: MeshRendererIndicador
       value: 
       objectReference: {fileID: 1154674316}
+    - target: {fileID: 220303031210332880, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 220303031585184930, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: m_Name
-      value: Player (2)
+      value: Animal1
+      objectReference: {fileID: 0}
+    - target: {fileID: 220303031585184930, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 220303031585184934, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
@@ -64064,14 +64300,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: Team1
       objectReference: {fileID: 0}
     - target: {fileID: 220303032207745230, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 7c1db7cdf04738740bfd277b4a8393d3, type: 2}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: tagTeam
+      value: 
+      objectReference: {fileID: 139623006}
     - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: atackButton
@@ -64092,6 +64338,18 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 554672047}
+    - target: {fileID: 2390433876128310081, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: animalDef
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c36d44bd0dd95c45988ba37bd626395,
+        type: 2}
+    - target: {fileID: 2390433876128310081, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: animalHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c55ede3a187f3f459ded55a8797dea1,
+        type: 2}
     - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: atackButton
@@ -73881,10 +74139,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 936078367}
     m_Modifications:
+    - target: {fileID: 220303031210332880, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 220303031585184930, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Animal4
+      objectReference: {fileID: 0}
+    - target: {fileID: 220303031585184930, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 220303031585184934, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
@@ -73936,6 +74204,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 220303032207745227, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: m_TagString
+      value: Team2
+      objectReference: {fileID: 0}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: tagTeam
+      value: 
+      objectReference: {fileID: 1526507709}
     - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: atackButton
@@ -73951,6 +74234,18 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 458880209}
+    - target: {fileID: 2390433876128310081, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: animalDef
+      value: 
+      objectReference: {fileID: 11400000, guid: 7c36d44bd0dd95c45988ba37bd626395,
+        type: 2}
+    - target: {fileID: 2390433876128310081, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: animalHealth
+      value: 
+      objectReference: {fileID: 11400000, guid: f94e590cfb7059d4f8deced69e8aa3d7,
+        type: 2}
     - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: atackButton
@@ -74535,6 +74830,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1035096090}
+    - targetCorrespondingSourceObject: {fileID: 4576541979910494316, guid: f427a85425b3ae944b53d0f51c6afb0d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1734046901}
     - targetCorrespondingSourceObject: {fileID: 4963562289470930438, guid: f427a85425b3ae944b53d0f51c6afb0d,
         type: 3}
       insertIndex: -1
