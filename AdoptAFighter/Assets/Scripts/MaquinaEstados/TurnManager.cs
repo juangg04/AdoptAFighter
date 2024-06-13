@@ -10,6 +10,9 @@ public class TurnManager : MonoBehaviour
 
     [SerializeField] private GameObject endText;
 
+    [SerializeField] public GameObject creditos;
+    [SerializeField] public GameObject textocreditos;
+
     private int totalAnimals = 4;
 
     private int team1Animals = 0;
@@ -64,6 +67,9 @@ public class TurnManager : MonoBehaviour
         Debug.Log(team2Animals);
         if ((team1Animals == 0 || team2Animals == 0 ) || (totalAnimals <=1)){
             endText.SetActive(true);
+            creditos.SetActive(true);
+            textocreditos.SetActive(true);
+
         }
         else{
         // Start next turn
@@ -97,5 +103,16 @@ public class TurnManager : MonoBehaviour
         players = playersList.ToArray();
 
        
+    }
+
+    public void Update()
+    {
+        if (textocreditos.gameObject.activeSelf)
+        {
+            RectTransform rectTransform = textocreditos.GetComponent<RectTransform>();
+            Vector3 position = rectTransform.localPosition;
+            position.y -= 80 * Time.deltaTime;
+            rectTransform.localPosition = position;
+        }
     }
 }
