@@ -7,7 +7,10 @@ using UnityEngine.UI;
 public class TurnManager : MonoBehaviour
 {
 
+
     [SerializeField] private GameObject endText;
+
+    private int totalAnimals = 4;
 
     private int team1Animals = 0;
     private int team2Animals = 0;
@@ -18,6 +21,7 @@ public class TurnManager : MonoBehaviour
     void Start()
     {
         StartTurn();
+
     }
 
     void StartTurn()
@@ -30,8 +34,17 @@ public class TurnManager : MonoBehaviour
 
     public void EndTurn()
     {
+        Debug.Log("Players: "+currentPlayerIndex);
+
         // PASA A ESTADO DE ESPERA
         maquinaDeEstados.ActivarEstado(maquinaDeEstados.Esperar);
+
+        if (currentPlayerIndex < players.Length) {
+            players[currentPlayerIndex].GetComponent<SphereCollider>().enabled = false;
+        } else {
+            currentPlayerIndex = 0; // Reiniciar el índice si es mayor o igual a la longitud de players
+        }
+
         players[currentPlayerIndex].GetComponent<SphereCollider>().enabled = false;
         // Move to next player
         currentPlayerIndex = (currentPlayerIndex + 1) < players.Length ? (currentPlayerIndex + 1) : 0;
@@ -49,7 +62,7 @@ public class TurnManager : MonoBehaviour
 
         Debug.Log(team1Animals);
         Debug.Log(team2Animals);
-        if (team1Animals == 0 || team2Animals == 0 ){
+        if ((team1Animals == 0 || team2Animals == 0 ) || (totalAnimals <=1)){
             endText.SetActive(true);
         }
         else{
