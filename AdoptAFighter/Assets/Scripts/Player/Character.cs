@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,12 +7,12 @@ public class Character : MonoBehaviour
 {
     #region Datos
 
-    [SerializeField] private Button atackButton;
+    [SerializeField] private Button attackButton;
 
     public GameObject tagTeam;
-    public GameObject cercano;
+    public List<GameObject> cercanos = new List<GameObject>();
     public bool Moving { get; private set; } = false;
-    public bool isMoving { get;  set; } = false;
+    public bool isMoving { get; set; } = false;
 
     public CharacterMoveData movedata;
     public CharacterMoveData waitdata;
@@ -19,13 +20,17 @@ public class Character : MonoBehaviour
     public Tile characterTile;
     [SerializeField]
     LayerMask GroundLayerMask;
+
+    private bool isSelectingTarget = false;
+    private EstadoAtacar estadoAtacar;
     #endregion
 
     private void Awake()
     {
         FindTileAtStart();
+        attackButton.onClick.AddListener(OnAttackButtonClicked);
+        estadoAtacar = GetComponent<EstadoAtacar>();
     }
-
 
     void FindTileAtStart()
     {
@@ -64,12 +69,10 @@ public class Character : MonoBehaviour
             {
                 continue;
             }
-                
 
             currentTile = path.tilesInPath[step];
             step++;
             animationtime = 0f;
-            
         }
 
         isMoving = true;
@@ -103,6 +106,7 @@ public class Character : MonoBehaviour
     {
         movedata = moverdata;
     }
+
     public void ChangeWaitData()
     {
         movedata = waitdata;
@@ -110,24 +114,63 @@ public class Character : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (atackButton == null)
+        if (attackButton == null)
         {
-            Debug.LogError("attackButton no est� asignado.");
+            Debug.LogError("attackButton no está asignado.");
             return; // Salir temprano si attackButton es null
         }
 
         if (other.CompareTag("Player"))
         {
-            if (other.gameObject.transform.GetChild(0).gameObject.tag == tagTeam.tag){
+            if (other.gameObject.transform.GetChild(0).gameObject.tag == tagTeam.tag)
+            {
                 Debug.Log("Mismo Equipo");
-            }else{
-                cercano = other.gameObject;
-                atackButton.gameObject.SetActive(true);
-                Debug.Log("ENTRO EN COLISION0");
             }
-
+            else
+            {
+                cercanos.Add(other.gameObject);
+                attackButton.gameObject.SetActive(true);
+                Debug.Log("ENTRO EN COLISION");
+            }
         }
     }
+
+    void OnAttackButtonClicked()
+    {
+        if (cercanos.Count > 0)
+        {
+            estadoAtacar.enabled = true;
+            isSelectingTarget = true;
+            Debug.Log("Selecciona un objetivo para atacar.");
+        }
+        else
+        {
+            Debug.Log("No hay enemigos cercanos para atacar.");
+        }
+    }
+
+    void Update()
+    {
+        if (isSelectingTarget && Input.GetMouseButtonDown(0))
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                if (cercanos.Contains(hit.collider.gameObject))
+                {
+                    AttackEnemy(hit.collider.gameObject);
+                    isSelectingTarget = false;
+                    estadoAtacar.enabled = false;
+                    Debug.Log("b");
+                }
+            }
+        }
+    }
+
+    void AttackEnemy(GameObject enemy)
+    {
+        // Lógica para atacar al enemigo seleccionado
+        enemy.GetComponent<HealthSystem>().TakeDamage(100);
+        Debug.Log($"Atacando a {enemy.name}");
+    }
 }
-
-

@@ -7221,6 +7221,16 @@ PrefabInstance:
       objectReference: {fileID: 1035096091}
     - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 1035096091}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: buttonParent
+      value: 
+      objectReference: {fileID: 214726947}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
       propertyPath: characterTile
       value: 
       objectReference: {fileID: 523039407}
@@ -7251,6 +7261,16 @@ PrefabInstance:
       propertyPath: atackButton
       value: 
       objectReference: {fileID: 1035096091}
+    - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 1035096091}
+    - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: buttonParent
+      value: 
+      objectReference: {fileID: 214726947}
     - target: {fileID: 5156800403701832592, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: button
@@ -29986,6 +30006,16 @@ PrefabInstance:
       objectReference: {fileID: 1035096091}
     - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 1035096091}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: buttonParent
+      value: 
+      objectReference: {fileID: 214726947}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
       propertyPath: characterTile
       value: 
       objectReference: {fileID: 1171490442}
@@ -30016,6 +30046,16 @@ PrefabInstance:
       propertyPath: atackButton
       value: 
       objectReference: {fileID: 1035096091}
+    - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 1035096091}
+    - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: buttonParent
+      value: 
+      objectReference: {fileID: 214726947}
     - target: {fileID: 5156800403701832592, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: button
@@ -65232,6 +65272,16 @@ PrefabInstance:
       objectReference: {fileID: 1035096091}
     - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 1035096091}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: buttonParent
+      value: 
+      objectReference: {fileID: 214726947}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
       propertyPath: characterTile
       value: 
       objectReference: {fileID: 2082931373}
@@ -65262,6 +65312,16 @@ PrefabInstance:
       propertyPath: atackButton
       value: 
       objectReference: {fileID: 1035096091}
+    - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 1035096091}
+    - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: buttonParent
+      value: 
+      objectReference: {fileID: 214726947}
     - target: {fileID: 5156800403701832592, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: button
@@ -75133,6 +75193,16 @@ PrefabInstance:
       objectReference: {fileID: 1035096091}
     - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 1035096091}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: buttonParent
+      value: 
+      objectReference: {fileID: 214726947}
+    - target: {fileID: 402148687042507822, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
       propertyPath: characterTile
       value: 
       objectReference: {fileID: 2102188129}
@@ -75158,6 +75228,16 @@ PrefabInstance:
       propertyPath: atackButton
       value: 
       objectReference: {fileID: 1035096091}
+    - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: attackButton
+      value: 
+      objectReference: {fileID: 1035096091}
+    - target: {fileID: 3849630415907087994, guid: 9e62eacb0b934924e996871848be7ecb,
+        type: 3}
+      propertyPath: buttonParent
+      value: 
+      objectReference: {fileID: 214726947}
     - target: {fileID: 5156800403701832592, guid: 9e62eacb0b934924e996871848be7ecb,
         type: 3}
       propertyPath: button
